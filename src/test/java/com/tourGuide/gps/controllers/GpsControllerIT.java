@@ -1,6 +1,10 @@
 package com.tourGuide.gps.controllers;
 
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.util.UUID;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -9,14 +13,18 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.tourGuide.gps.domain.Location;
+import com.tourGuide.gps.domain.dto.UserDto;
+import com.tourGuide.gps.proxies.MicroserviceRewardsProxy;
+import com.tourGuide.gps.proxies.MicroserviceUserProxy;
 import com.tourGuide.gps.services.IGpsService;
 
 @SpringBootTest
@@ -31,13 +39,15 @@ public class GpsControllerIT {
     private WebApplicationContext wac;
 
     @Autowired
-    public IGpsService userService;
+    public IGpsService gpsService;
 
-    private static final String URI_GET_ALL_ATTRACTIONS = "/gps/getAllAttractions";
+    @MockBean
+    private MicroserviceUserProxy microserviceUserProxy;
 
-//    private static final String USER_TEST_1 = "internalUser1";
-//
-//    private static final String PARAM_USERNAME = "userName";
+    @MockBean
+    private MicroserviceRewardsProxy microserviceRewardsProxy;
+
+    private static final String URI_GET_CLOSEST_ATTRACTIONS = "/gps/getClosestAttractions/internalUser1";
 
     @BeforeEach
     public void setUpPerTest() {
@@ -45,13 +55,20 @@ public class GpsControllerIT {
     }
 
     @Test
-    @Tag("GetAllAttractions")
-    @DisplayName("Get All Attractions- OK")
-    public void aaaa() throws Exception {
+    @Tag("GetClosestAttractions")
+    @DisplayName("Get Closest Attractions - OK")
+    public void givenExistingUser_whenGetClosestAttractions_thenReturnOk()
+            throws Exception {
+        UserDto userDto = new UserDto(UUID.randomUUID(),
+                new Location(48.858331, 2.294481));
+        when(microserviceUserProxy.getUserDto("internalUser1"))
+                .thenReturn(userDto);
+
         this.mockMvc
-                .perform(MockMvcRequestBuilders.get(URI_GET_ALL_ATTRACTIONS)
+                .perform(get(URI_GET_CLOSEST_ATTRACTIONS)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk()).andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isOk()).andReturn();
     }
+
 }
