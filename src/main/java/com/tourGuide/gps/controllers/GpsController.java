@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tourGuide.gps.domain.ClosestAttraction;
+import com.tourGuide.gps.domain.dto.VisitedLocationDto;
 import com.tourGuide.gps.services.IGpsService;
 
 @RestController
@@ -22,6 +23,12 @@ public class GpsController {
     public List<ClosestAttraction> getClosestAttractions(
             @PathVariable("userName") String userName) {
         return gpsService.getClosestAttractions(userName);
+    }
+
+    @GetMapping("/getUserInstantLocation/{userName}")
+    public VisitedLocationDto getUserInstantLocation(
+            @PathVariable("userName") String userName) {
+        return gpsService.getUserInstantLocation(userName);
     }
 
 }

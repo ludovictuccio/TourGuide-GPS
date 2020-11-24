@@ -89,8 +89,4 @@ public class User {
         this.userPreferences = userPreferences;
     }
 
-//    public VisitedLocation getLastVisitedLocation() {
-//        return visitedLocations.get(visitedLocations.size() - 1);
-//    }
-
 }

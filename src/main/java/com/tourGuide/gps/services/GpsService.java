@@ -11,6 +11,7 @@ import com.tourGuide.gps.domain.ClosestAttraction;
 import com.tourGuide.gps.domain.Location;
 import com.tourGuide.gps.domain.dto.AttractionDto;
 import com.tourGuide.gps.domain.dto.UserDto;
+import com.tourGuide.gps.domain.dto.VisitedLocationDto;
 import com.tourGuide.gps.proxies.MicroserviceRewardsProxy;
 import com.tourGuide.gps.proxies.MicroserviceUserProxy;
 import com.tourGuide.gps.util.DistanceCalculator;
@@ -46,11 +47,10 @@ public class GpsService implements IGpsService {
     public List<AttractionDto> getAllAttractions() {
 
         List<AttractionDto> allAttractionsDto = new ArrayList<>();
-        List<Attraction> allAttractionsEntities = gpsUtil.getAttractions();
 
-        for (Attraction attraction : allAttractionsEntities) {
+        for (Attraction attraction : gpsUtil.getAttractions()) {
             AttractionDto attractionDto = entityToDtoConversion
-                    .convertToDto(attraction);
+                    .convertAttractionToDto(attraction);
             allAttractionsDto.add(attractionDto);
         }
         return allAttractionsDto;
@@ -64,7 +64,6 @@ public class GpsService implements IGpsService {
     public List<ClosestAttraction> getClosestAttractions(String userName) {
 
         UserDto userDto = microserviceUserProxy.getUserDto(userName);
-        UUID userId = userDto.getUserId();
         Location location = userDto.getLastLocation();
 
         List<AttractionDto> attractionsList = getAllAttractions();
@@ -84,7 +83,7 @@ public class GpsService implements IGpsService {
 
                     int attractionRewardsPoints = microserviceRewardsProxy
                             .getAttractionRewards(attraction.getAttractionId(),
-                                    userId);
+                                    userDto.getUserId());
 
                     ClosestAttraction closestAttraction = new ClosestAttraction(
                             attraction.getAttractionName(),
@@ -96,6 +95,22 @@ public class GpsService implements IGpsService {
                     theFiveClosestAttractions.add(closestAttraction);
                 });
         return theFiveClosestAttractions;
+    }
+
+    /**
+     * Method used to track user location from GpsUtil.
+     *
+     * @param user
+     * @return visitedLocation
+     */
+    public VisitedLocationDto getUserInstantLocation(String userName) {
+
+        UUID userId = microserviceUserProxy.getUserDto(userName).getUserId();
+
+        VisitedLocationDto visitedLocationDto = entityToDtoConversion
+                .convertVisitedLocationToDto(gpsUtil.getUserLocation(userId));
+
+        return visitedLocationDto;
     }
 
 }

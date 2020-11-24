@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -17,8 +18,10 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.tourGuide.gps.domain.ClosestAttraction;
 import com.tourGuide.gps.domain.Location;
+import com.tourGuide.gps.domain.User;
 import com.tourGuide.gps.domain.dto.AttractionDto;
 import com.tourGuide.gps.domain.dto.UserDto;
+import com.tourGuide.gps.domain.dto.VisitedLocationDto;
 import com.tourGuide.gps.proxies.MicroserviceRewardsProxy;
 import com.tourGuide.gps.proxies.MicroserviceUserProxy;
 import com.tourGuide.gps.util.DistanceCalculator;
@@ -26,6 +29,7 @@ import com.tourGuide.gps.util.EntityToDtoConversion;
 
 import gpsUtil.GpsUtil;
 import gpsUtil.location.Attraction;
+import gpsUtil.location.VisitedLocation;
 
 @SpringBootTest
 public class GpsServiceTest {
@@ -148,21 +152,23 @@ public class GpsServiceTest {
 
         when(gpsUtil.getAttractions()).thenReturn(attractionsList);
 
-        when(entityToDtoConversion.convertToDto(tourEiffel))
+        when(entityToDtoConversion.convertAttractionToDto(tourEiffel))
                 .thenReturn(tourEiffelDto);
-        when(entityToDtoConversion.convertToDto(louvre)).thenReturn(louvreDto);
-        when(entityToDtoConversion.convertToDto(lesInvalides))
+        when(entityToDtoConversion.convertAttractionToDto(louvre))
+                .thenReturn(louvreDto);
+        when(entityToDtoConversion.convertAttractionToDto(lesInvalides))
                 .thenReturn(lesInvalidesDto);
-        when(entityToDtoConversion.convertToDto(lePantheon))
+        when(entityToDtoConversion.convertAttractionToDto(lePantheon))
                 .thenReturn(lePantheonDto);
-        when(entityToDtoConversion.convertToDto(disneylandParis))
+        when(entityToDtoConversion.convertAttractionToDto(disneylandParis))
                 .thenReturn(disneylandParisDto);
-        when(entityToDtoConversion.convertToDto(futuroscope))
+        when(entityToDtoConversion.convertAttractionToDto(futuroscope))
                 .thenReturn(futuroscopeDto);
-        when(entityToDtoConversion.convertToDto(vieuxPortDeMarseille))
+        when(entityToDtoConversion.convertAttractionToDto(vieuxPortDeMarseille))
                 .thenReturn(vieuxPortDeMarseilleDto);
-        when(entityToDtoConversion.convertToDto(basiliqueNotreDameDeFourviere))
-                .thenReturn(basiliqueNotreDameDeFourviereDto);
+        when(entityToDtoConversion
+                .convertAttractionToDto(basiliqueNotreDameDeFourviere))
+                        .thenReturn(basiliqueNotreDameDeFourviereDto);
 
         when(microserviceRewardsProxy.getAttractionRewards(
                 tourEiffelDto.getAttractionId(), userDto.getUserId()))
@@ -238,5 +244,48 @@ public class GpsServiceTest {
         // THEN
         assertThat(result.size()).isEqualTo(8);
 
+    }
+
+    @Test
+    @Tag("trackUserLocation")
+    @DisplayName("Track User Location - OK")
+    public void givenValidUser_whenTrackLocation_thenReturnOk() {
+        // GIVEN
+        User user = new User(UUID.randomUUID(), "username", "029988776655",
+                "email@gmail.fr");
+        gpsUtil.location.Location gpsLocation = new gpsUtil.location.Location(
+                48.858331, 2.294481);
+        Location locationEntity = new Location(48.858331, 2.294481);
+        userDto = new UserDto(user.getUserId(), locationEntity);
+
+        when(microserviceUserProxy.getUserDto(user.getUserName()))
+                .thenReturn(userDto);
+
+        VisitedLocation visitedLocation = new VisitedLocation(user.getUserId(),
+                gpsLocation, new Date());
+
+        VisitedLocationDto visitedLocationDto = new VisitedLocationDto(
+                user.getUserId(), visitedLocation.location.latitude,
+                visitedLocation.location.longitude,
+                visitedLocation.timeVisited);
+
+        when(gpsUtil.getUserLocation(userDto.getUserId()))
+                .thenReturn(visitedLocation);
+
+        when(entityToDtoConversion.convertVisitedLocationToDto(visitedLocation))
+                .thenReturn(visitedLocationDto);
+
+        // WHEN
+        VisitedLocationDto result = gpsService
+                .getUserInstantLocation(user.getUserName());
+
+        // THEN
+        assertThat(result.userId).isEqualTo(userDto.getUserId());
+        assertThat(result.getLatitude())
+                .isEqualTo(locationEntity.getLatitude());
+        assertThat(result.getLongitude())
+                .isEqualTo(locationEntity.getLongitude());
+        assertThat(result.timeVisited)
+                .isEqualTo(visitedLocationDto.timeVisited);
     }
 }

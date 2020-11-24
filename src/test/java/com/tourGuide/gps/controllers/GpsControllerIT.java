@@ -4,6 +4,7 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.Date;
 import java.util.UUID;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -27,6 +28,9 @@ import com.tourGuide.gps.proxies.MicroserviceRewardsProxy;
 import com.tourGuide.gps.proxies.MicroserviceUserProxy;
 import com.tourGuide.gps.services.IGpsService;
 
+import gpsUtil.GpsUtil;
+import gpsUtil.location.VisitedLocation;
+
 @SpringBootTest
 @AutoConfigureMockMvc
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
@@ -42,16 +46,48 @@ public class GpsControllerIT {
     public IGpsService gpsService;
 
     @MockBean
+    private GpsUtil gpsUtil;
+
+    @MockBean
     private MicroserviceUserProxy microserviceUserProxy;
 
     @MockBean
     private MicroserviceRewardsProxy microserviceRewardsProxy;
 
     private static final String URI_GET_CLOSEST_ATTRACTIONS = "/gps/getClosestAttractions/internalUser1";
+    private static final String URI_GET_TRACK_USER_LOCATION = "/gps/getUserInstantLocation/internalUser1";
+
+    private static final String USER_TEST_1 = "internalUser1";
 
     @BeforeEach
     public void setUpPerTest() {
         mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
+    }
+
+    @Test
+    @Tag("trackUserLocation")
+    @DisplayName("Track User Location - OK")
+    public void givenUserBody_whenTrackLocation_thenReturnOk()
+            throws Exception {
+
+        UserDto userDto = new UserDto(UUID.randomUUID(),
+                new Location(48.858331, 2.294481));
+        when(microserviceUserProxy.getUserDto(USER_TEST_1)).thenReturn(userDto);
+
+        gpsUtil.location.Location gpsLocation = new gpsUtil.location.Location(
+                48.858331, 2.294481);
+
+        VisitedLocation visitedLocation = new VisitedLocation(
+                userDto.getUserId(), gpsLocation, new Date());
+
+        when(gpsUtil.getUserLocation(userDto.getUserId()))
+                .thenReturn(visitedLocation);
+
+        this.mockMvc
+                .perform(get(URI_GET_TRACK_USER_LOCATION)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk()).andDo(MockMvcResultHandlers.print())
+                .andExpect(status().isOk()).andReturn();
     }
 
     @Test
@@ -61,8 +97,7 @@ public class GpsControllerIT {
             throws Exception {
         UserDto userDto = new UserDto(UUID.randomUUID(),
                 new Location(48.858331, 2.294481));
-        when(microserviceUserProxy.getUserDto("internalUser1"))
-                .thenReturn(userDto);
+        when(microserviceUserProxy.getUserDto(USER_TEST_1)).thenReturn(userDto);
 
         this.mockMvc
                 .perform(get(URI_GET_CLOSEST_ATTRACTIONS)
