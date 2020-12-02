@@ -61,7 +61,8 @@ public class GpsService implements IGpsService {
      * user's location, and determine attraction rewards from RewardsCentral in
      * micro-service rewards.
      */
-    public List<ClosestAttraction> getClosestAttractions(String userName) {
+    public List<ClosestAttraction> getClosestAttractions(
+            final String userName) {
 
         UserDto userDto = microserviceUserProxy.getUserDto(userName);
         Location location = userDto.getLastLocation();
@@ -103,7 +104,7 @@ public class GpsService implements IGpsService {
      * @param user
      * @return visitedLocation
      */
-    public VisitedLocationDto getUserInstantLocation(String userName) {
+    public VisitedLocationDto getUserInstantLocation(final String userName) {
 
         UUID userId = microserviceUserProxy.getUserDto(userName).getUserId();
 

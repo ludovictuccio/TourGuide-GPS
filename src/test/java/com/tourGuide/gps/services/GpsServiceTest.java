@@ -18,7 +18,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.tourGuide.gps.domain.ClosestAttraction;
 import com.tourGuide.gps.domain.Location;
-import com.tourGuide.gps.domain.User;
 import com.tourGuide.gps.domain.dto.AttractionDto;
 import com.tourGuide.gps.domain.dto.UserDto;
 import com.tourGuide.gps.domain.dto.VisitedLocationDto;
@@ -251,21 +250,18 @@ public class GpsServiceTest {
     @DisplayName("Track User Location - OK")
     public void givenValidUser_whenTrackLocation_thenReturnOk() {
         // GIVEN
-        User user = new User(UUID.randomUUID(), "username", "029988776655",
-                "email@gmail.fr");
         gpsUtil.location.Location gpsLocation = new gpsUtil.location.Location(
                 48.858331, 2.294481);
         Location locationEntity = new Location(48.858331, 2.294481);
-        userDto = new UserDto(user.getUserId(), locationEntity);
+        userDto = new UserDto(UUID.randomUUID(), locationEntity);
 
-        when(microserviceUserProxy.getUserDto(user.getUserName()))
-                .thenReturn(userDto);
+        when(microserviceUserProxy.getUserDto("username")).thenReturn(userDto);
 
-        VisitedLocation visitedLocation = new VisitedLocation(user.getUserId(),
-                gpsLocation, new Date());
+        VisitedLocation visitedLocation = new VisitedLocation(
+                userDto.getUserId(), gpsLocation, new Date());
 
         VisitedLocationDto visitedLocationDto = new VisitedLocationDto(
-                user.getUserId(), visitedLocation.location.latitude,
+                userDto.getUserId(), visitedLocation.location.latitude,
                 visitedLocation.location.longitude,
                 visitedLocation.timeVisited);
 
@@ -277,7 +273,7 @@ public class GpsServiceTest {
 
         // WHEN
         VisitedLocationDto result = gpsService
-                .getUserInstantLocation(user.getUserName());
+                .getUserInstantLocation("username");
 
         // THEN
         assertThat(result.userId).isEqualTo(userDto.getUserId());

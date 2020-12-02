@@ -56,12 +56,25 @@ public class GpsControllerIT {
 
     private static final String URI_GET_CLOSEST_ATTRACTIONS = "/gps/getClosestAttractions/internalUser1";
     private static final String URI_GET_TRACK_USER_LOCATION = "/gps/getUserInstantLocation/internalUser1";
+    private static final String URI_GET_ALL_ATTRACTIONS = "/gps/getAllAttractions";
 
     private static final String USER_TEST_1 = "internalUser1";
 
     @BeforeEach
     public void setUpPerTest() {
         mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
+    }
+
+    @Test
+    @Tag("getAllAttractions")
+    @DisplayName("Get All Attractions - OK")
+    public void givenAttractionsList_whenGetAllAttractions_thenReturnOk()
+            throws Exception {
+        this.mockMvc
+                .perform(get(URI_GET_ALL_ATTRACTIONS)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk()).andDo(MockMvcResultHandlers.print())
+                .andExpect(status().isOk()).andReturn();
     }
 
     @Test
