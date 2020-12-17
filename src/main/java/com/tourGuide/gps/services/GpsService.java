@@ -15,7 +15,7 @@ import com.tourGuide.gps.domain.dto.VisitedLocationDto;
 import com.tourGuide.gps.proxies.MicroserviceRewardsProxy;
 import com.tourGuide.gps.proxies.MicroserviceUserProxy;
 import com.tourGuide.gps.util.DistanceCalculator;
-import com.tourGuide.gps.util.EntityToDtoConversion;
+import com.tourGuide.gps.util.EntityToDtoConverter;
 
 import gpsUtil.GpsUtil;
 import gpsUtil.location.Attraction;
@@ -36,7 +36,7 @@ public class GpsService implements IGpsService {
     private DistanceCalculator distanceCalculator;
 
     @Autowired
-    private EntityToDtoConversion entityToDtoConversion;
+    private EntityToDtoConverter entityToDtoConversion;
 
     /**
      * Method used to get all attractions Dto (to convert Attraction latitude /
@@ -59,7 +59,7 @@ public class GpsService implements IGpsService {
     /**
      * This method will return the five closest attractions since the last
      * user's location, and determine attraction rewards from RewardsCentral in
-     * micro-service rewards.
+     * microservice rewards.
      */
     public List<ClosestAttraction> getClosestAttractions(
             final String userName) {
@@ -101,17 +101,12 @@ public class GpsService implements IGpsService {
     /**
      * Method used to track user location from GpsUtil.
      *
-     * @param user
-     * @return visitedLocation
+     * @param user UUID
+     * @return visitedLocationDto
      */
-    public VisitedLocationDto getUserInstantLocation(final String userName) {
-
-        UUID userId = microserviceUserProxy.getUserDto(userName).getUserId();
-
-        VisitedLocationDto visitedLocationDto = entityToDtoConversion
+    public VisitedLocationDto getUserInstantLocation(final UUID userId) {
+        return entityToDtoConversion
                 .convertVisitedLocationToDto(gpsUtil.getUserLocation(userId));
-
-        return visitedLocationDto;
     }
 
 }

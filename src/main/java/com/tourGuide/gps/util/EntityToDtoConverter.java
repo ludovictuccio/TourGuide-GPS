@@ -11,7 +11,7 @@ import gpsUtil.location.Attraction;
 import gpsUtil.location.VisitedLocation;
 
 @Component
-public class EntityToDtoConversion {
+public class EntityToDtoConverter {
 
     @Autowired
     private ModelMapper modelMapper;

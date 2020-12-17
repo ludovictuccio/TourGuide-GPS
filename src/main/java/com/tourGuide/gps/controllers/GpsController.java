@@ -1,6 +1,7 @@
 package com.tourGuide.gps.controllers;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,15 +27,15 @@ public class GpsController {
         return gpsService.getClosestAttractions(userName);
     }
 
-    @GetMapping("/getUserInstantLocation/{userName}")
-    public VisitedLocationDto getUserInstantLocation(
-            @PathVariable("userName") String userName) {
-        return gpsService.getUserInstantLocation(userName);
-    }
-
     @GetMapping("/getAllAttractions")
     public List<AttractionDto> getAllAttractions() {
         return gpsService.getAllAttractions();
+    }
+
+    @GetMapping("/getUserInstantLocation/{userId}")
+    public VisitedLocationDto getUserInstantLocation(
+            @PathVariable("userId") UUID userId) {
+        return gpsService.getUserInstantLocation(userId);
     }
 
 }

@@ -1,6 +1,7 @@
 package com.tourGuide.gps.services;
 
 import java.util.List;
+import java.util.UUID;
 
 import com.tourGuide.gps.domain.ClosestAttraction;
 import com.tourGuide.gps.domain.dto.AttractionDto;
@@ -12,6 +13,6 @@ public interface IGpsService {
 
     List<ClosestAttraction> getClosestAttractions(String userName);
 
-    VisitedLocationDto getUserInstantLocation(String userName);
+    VisitedLocationDto getUserInstantLocation(UUID userId);
 
 }

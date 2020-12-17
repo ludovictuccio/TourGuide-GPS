@@ -20,10 +20,10 @@ import gpsUtil.location.Location;
 import gpsUtil.location.VisitedLocation;
 
 @SpringBootTest
-public class EntityToDtoConversionTest {
+public class EntityToDtoConverterTest {
 
     @Autowired
-    private EntityToDtoConversion entityToDtoConversion;
+    private EntityToDtoConverter entityToDtoConversion;
 
     private Attraction attraction;
 

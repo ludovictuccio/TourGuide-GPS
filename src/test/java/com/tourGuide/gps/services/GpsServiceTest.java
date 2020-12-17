@@ -24,7 +24,7 @@ import com.tourGuide.gps.domain.dto.VisitedLocationDto;
 import com.tourGuide.gps.proxies.MicroserviceRewardsProxy;
 import com.tourGuide.gps.proxies.MicroserviceUserProxy;
 import com.tourGuide.gps.util.DistanceCalculator;
-import com.tourGuide.gps.util.EntityToDtoConversion;
+import com.tourGuide.gps.util.EntityToDtoConverter;
 
 import gpsUtil.GpsUtil;
 import gpsUtil.location.Attraction;
@@ -40,7 +40,7 @@ public class GpsServiceTest {
     private GpsUtil gpsUtil;
 
     @MockBean
-    private EntityToDtoConversion entityToDtoConversion;
+    private EntityToDtoConverter entityToDtoConversion;
 
     @MockBean
     private MicroserviceRewardsProxy microserviceRewardsProxy;
@@ -273,7 +273,7 @@ public class GpsServiceTest {
 
         // WHEN
         VisitedLocationDto result = gpsService
-                .getUserInstantLocation("username");
+                .getUserInstantLocation(userDto.getUserId());
 
         // THEN
         assertThat(result.userId).isEqualTo(userDto.getUserId());

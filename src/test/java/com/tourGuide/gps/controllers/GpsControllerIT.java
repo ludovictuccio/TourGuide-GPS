@@ -55,10 +55,12 @@ public class GpsControllerIT {
     private MicroserviceRewardsProxy microserviceRewardsProxy;
 
     private static final String URI_GET_CLOSEST_ATTRACTIONS = "/gps/getClosestAttractions/internalUser1";
-    private static final String URI_GET_TRACK_USER_LOCATION = "/gps/getUserInstantLocation/internalUser1";
+    private static final String URI_GET_TRACK_USER_LOCATION = "/gps/getUserInstantLocation/123e4567-e89b-12d3-a456-426614174000";
     private static final String URI_GET_ALL_ATTRACTIONS = "/gps/getAllAttractions";
 
     private static final String USER_TEST_1 = "internalUser1";
+    private static final UUID UUID_TEST_VALID = UUID
+            .fromString("123e4567-e89b-12d3-a456-426614174000");
 
     @BeforeEach
     public void setUpPerTest() {
@@ -83,17 +85,17 @@ public class GpsControllerIT {
     public void givenUserBody_whenTrackLocation_thenReturnOk()
             throws Exception {
 
-        UserDto userDto = new UserDto(UUID.randomUUID(),
+        UserDto userDto = new UserDto(UUID_TEST_VALID,
                 new Location(48.858331, 2.294481));
         when(microserviceUserProxy.getUserDto(USER_TEST_1)).thenReturn(userDto);
 
         gpsUtil.location.Location gpsLocation = new gpsUtil.location.Location(
                 48.858331, 2.294481);
 
-        VisitedLocation visitedLocation = new VisitedLocation(
-                userDto.getUserId(), gpsLocation, new Date());
+        VisitedLocation visitedLocation = new VisitedLocation(UUID_TEST_VALID,
+                gpsLocation, new Date());
 
-        when(gpsUtil.getUserLocation(userDto.getUserId()))
+        when(gpsUtil.getUserLocation(UUID_TEST_VALID))
                 .thenReturn(visitedLocation);
 
         this.mockMvc
