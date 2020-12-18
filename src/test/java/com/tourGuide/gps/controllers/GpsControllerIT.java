@@ -55,7 +55,7 @@ public class GpsControllerIT {
     private MicroserviceRewardsProxy microserviceRewardsProxy;
 
     private static final String URI_GET_CLOSEST_ATTRACTIONS = "/gps/getClosestAttractions/internalUser1";
-    private static final String URI_GET_TRACK_USER_LOCATION = "/gps/getUserInstantLocation/123e4567-e89b-12d3-a456-426614174000";
+    private static final String URI_GET_USER_INSTANT_LOCATION = "/gps/getUserInstantLocation/123e4567-e89b-12d3-a456-426614174000";
     private static final String URI_GET_ALL_ATTRACTIONS = "/gps/getAllAttractions";
 
     private static final String USER_TEST_1 = "internalUser1";
@@ -80,11 +80,10 @@ public class GpsControllerIT {
     }
 
     @Test
-    @Tag("trackUserLocation")
+    @Tag("getUserInstantLocation")
     @DisplayName("Track User Location - OK")
     public void givenUserBody_whenTrackLocation_thenReturnOk()
             throws Exception {
-
         UserDto userDto = new UserDto(UUID_TEST_VALID,
                 new Location(48.858331, 2.294481));
         when(microserviceUserProxy.getUserDto(USER_TEST_1)).thenReturn(userDto);
@@ -99,7 +98,7 @@ public class GpsControllerIT {
                 .thenReturn(visitedLocation);
 
         this.mockMvc
-                .perform(get(URI_GET_TRACK_USER_LOCATION)
+                .perform(get(URI_GET_USER_INSTANT_LOCATION)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk()).andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isOk()).andReturn();
@@ -113,7 +112,6 @@ public class GpsControllerIT {
         UserDto userDto = new UserDto(UUID.randomUUID(),
                 new Location(48.858331, 2.294481));
         when(microserviceUserProxy.getUserDto(USER_TEST_1)).thenReturn(userDto);
-
         this.mockMvc
                 .perform(get(URI_GET_CLOSEST_ATTRACTIONS)
                         .contentType(MediaType.APPLICATION_JSON))

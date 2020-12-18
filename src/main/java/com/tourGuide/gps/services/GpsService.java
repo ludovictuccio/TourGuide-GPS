@@ -39,10 +39,7 @@ public class GpsService implements IGpsService {
     private EntityToDtoConverter entityToDtoConversion;
 
     /**
-     * Method used to get all attractions Dto (to convert Attraction latitude /
-     * longitude to Location).
-     *
-     * @return List<AttractionDto> allAttractionsDto
+     * {@inheritDoc}
      */
     public List<AttractionDto> getAllAttractions() {
 
@@ -57,9 +54,7 @@ public class GpsService implements IGpsService {
     }
 
     /**
-     * This method will return the five closest attractions since the last
-     * user's location, and determine attraction rewards from RewardsCentral in
-     * microservice rewards.
+     * {@inheritDoc}
      */
     public List<ClosestAttraction> getClosestAttractions(
             final String userName) {
@@ -99,10 +94,7 @@ public class GpsService implements IGpsService {
     }
 
     /**
-     * Method used to track user location from GpsUtil.
-     *
-     * @param user UUID
-     * @return visitedLocationDto
+     * {@inheritDoc}
      */
     public VisitedLocationDto getUserInstantLocation(final UUID userId) {
         return entityToDtoConversion

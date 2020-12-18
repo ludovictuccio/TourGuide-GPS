@@ -9,10 +9,30 @@ import com.tourGuide.gps.domain.dto.VisitedLocationDto;
 
 public interface IGpsService {
 
+    /**
+     * Method used to get all attractions Dto (to convert Attraction latitude /
+     * longitude to Location).
+     *
+     * @return List<AttractionDto> allAttractionsDto
+     */
     List<AttractionDto> getAllAttractions();
 
-    List<ClosestAttraction> getClosestAttractions(String userName);
+    /**
+     * This method will return the five closest attractions since the last
+     * user's location, and determine attraction rewards from RewardsCentral in
+     * microservice rewards.
+     * 
+     * @param userName
+     * @return 5 ClosestAttraction
+     */
+    List<ClosestAttraction> getClosestAttractions(final String userName);
 
-    VisitedLocationDto getUserInstantLocation(UUID userId);
+    /**
+     * Method used to track user location from GpsUtil.
+     *
+     * @param user UUID
+     * @return visitedLocationDto
+     */
+    VisitedLocationDto getUserInstantLocation(final UUID userId);
 
 }

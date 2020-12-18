@@ -246,9 +246,9 @@ public class GpsServiceTest {
     }
 
     @Test
-    @Tag("trackUserLocation")
-    @DisplayName("Track User Location - OK")
-    public void givenValidUser_whenTrackLocation_thenReturnOk() {
+    @Tag("getUserInstantLocation")
+    @DisplayName("Get User Instant Location - OK")
+    public void givenValidUser_whenGetUserInstantLocation_thenReturnOk() {
         // GIVEN
         gpsUtil.location.Location gpsLocation = new gpsUtil.location.Location(
                 48.858331, 2.294481);
@@ -267,7 +267,6 @@ public class GpsServiceTest {
 
         when(gpsUtil.getUserLocation(userDto.getUserId()))
                 .thenReturn(visitedLocation);
-
         when(entityToDtoConversion.convertVisitedLocationToDto(visitedLocation))
                 .thenReturn(visitedLocationDto);
 
