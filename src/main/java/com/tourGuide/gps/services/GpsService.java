@@ -65,7 +65,7 @@ public class GpsService implements IGpsService {
         List<AttractionDto> attractionsList = getAllAttractions();
         List<ClosestAttraction> theFiveClosestAttractions = new ArrayList<>();
 
-        if (attractionsList == null) {
+        if (attractionsList.isEmpty()) {
             return theFiveClosestAttractions;
         }
 
