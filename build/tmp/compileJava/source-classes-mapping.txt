@@ -1,0 +1,28 @@
+com/tourGuide/gps/domain/dto/AttractionDto.java
+ com.tourGuide.gps.domain.dto.AttractionDto
+com/tourGuide/gps/GpsApplication.java
+ com.tourGuide.gps.GpsApplication
+com/tourGuide/gps/domain/VisitedLocation.java
+ com.tourGuide.gps.domain.VisitedLocation
+com/tourGuide/gps/util/EntityToDtoConverter.java
+ com.tourGuide.gps.util.EntityToDtoConverter
+com/tourGuide/gps/controllers/GpsController.java
+ com.tourGuide.gps.controllers.GpsController
+com/tourGuide/gps/domain/dto/VisitedLocationDto.java
+ com.tourGuide.gps.domain.dto.VisitedLocationDto
+com/tourGuide/gps/proxies/MicroserviceRewardsProxy.java
+ com.tourGuide.gps.proxies.MicroserviceRewardsProxy
+com/tourGuide/gps/util/DistanceCalculator.java
+ com.tourGuide.gps.util.DistanceCalculator
+com/tourGuide/gps/domain/ClosestAttraction.java
+ com.tourGuide.gps.domain.ClosestAttraction
+com/tourGuide/gps/services/GpsService.java
+ com.tourGuide.gps.services.GpsService
+com/tourGuide/gps/domain/dto/UserDto.java
+ com.tourGuide.gps.domain.dto.UserDto
+com/tourGuide/gps/services/IGpsService.java
+ com.tourGuide.gps.services.IGpsService
+com/tourGuide/gps/proxies/MicroserviceUserProxy.java
+ com.tourGuide.gps.proxies.MicroserviceUserProxy
+com/tourGuide/gps/domain/Location.java
+ com.tourGuide.gps.domain.Location
