@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.1.1" sequence="0" timestamp="1609358090071" analysisTimestamp="1609358090073" release="0.0.1-SNAPSHOT">
+  <Project projectName="gps (spotbugsTest)">
+    <Jar>C:\Users\Ludo\Documents\Eclipse\workspace\TourGuide\TourGuide-GPS\build\classes\java\test\com\tourGuide\gps\controllers\GpsControllerIT.class</Jar>
+    <Jar>C:\Users\Ludo\Documents\Eclipse\workspace\TourGuide\TourGuide-GPS\build\classes\java\test\com\tourGuide\gps\GpsApplicationTests.class</Jar>
+    <Jar>C:\Users\Ludo\Documents\Eclipse\workspace\TourGuide\TourGuide-GPS\build\classes\java\test\com\tourGuide\gps\services\GpsServiceTest.class</Jar>
+    <Jar>C:\Users\Ludo\Documents\Eclipse\workspace\TourGuide\TourGuide-GPS\build\classes\java\test\com\tourGuide\gps\util\DistanceCalculatorTest.class</Jar>
+    <Jar>C:\Users\Ludo\Documents\Eclipse\workspace\TourGuide\TourGuide-GPS\build\classes\java\test\com\tourGuide\gps\util\EntityToDtoConverterTest.class</Jar>
+    <AuxClasspathEntry>C:\Users\Ludo\Documents\Eclipse\workspace\TourGuide\TourGuide-GPS\build\classes\java\main</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\Documents\Eclipse\workspace\TourGuide\TourGuide-GPS\build\resources\main</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-reactor-netty\2.4.0-M1\c311c01f1fb11387283e51963a291cb6e9aa2933\spring-boot-starter-reactor-netty-2.4.0-M1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-actuator\2.4.0-SNAPSHOT\ddf98fa7535a17c66c32e502df8dabcdc32a113d\spring-boot-starter-actuator-2.4.0-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-web\2.4.0-SNAPSHOT\58dcff4efd6449b65dcd754947360a1481922368\spring-boot-starter-web-2.4.0-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-test\2.4.0-SNAPSHOT\b1d62fab86bf44e872e6e75520170829208e7f32\spring-boot-starter-test-2.4.0-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\com.jsoniter\jsoniter\0.9.23\4cff9a02d6d9a848d1b7298aac36c47fd9e67d77\jsoniter-0.9.23.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.cloud\spring-cloud-starter-openfeign\3.0.0-M4\dc395b31a41423d1f1e51f81dcf14091930da163\spring-cloud-starter-openfeign-3.0.0-M4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.modelmapper\modelmapper\2.3.8\9cfa7d9ea8d0ccdd6a91f3331f54c1938ff15ae0\modelmapper-2.3.8.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.11\68e9a6adf7cf8eb7e9d31bbc554c7c75eeaac568\commons-lang3-3.11.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.springfox\springfox-boot-starter\3.0.0\5486365e263f8acca014b97efa50c3419d58e8f6\springfox-boot-starter-3.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\Documents\Eclipse\workspace\TourGuide\TourGuide-GPS\libs\gpsUtil.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.testcontainers\junit-jupiter\1.14.3\5e7af4b6eaa610c17f74be47a243f1f2fc5beb92\junit-jupiter-1.14.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.assertj\assertj-core\3.9.1\c5ce126b15f28d56cd8f960c1a6a058b9c9aea87\assertj-core-3.9.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.projectreactor.netty\reactor-netty\1.0.1\331a85a7106fcadf6fbd386c36d122bd9bbcae8\reactor-netty-1.0.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-json\2.4.0-SNAPSHOT\fc33a354786c9e458728e436136f2217546fff53\spring-boot-starter-json-2.4.0-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.cloud\spring-cloud-starter\3.0.0-M4\9139995ba030992a71b26561baf827e31d578b08\spring-cloud-starter-3.0.0-M4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.cloud\spring-cloud-openfeign-core\3.0.0-M4\3a3a346ae3890d94e4087dab66dca4877a70d516\spring-cloud-openfeign-core-3.0.0-M4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-aop\2.4.0-SNAPSHOT\5e8ba1480571847fc0041d63c7fc8f59337c4364\spring-boot-starter-aop-2.4.0-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter\2.4.0-SNAPSHOT\1e7debe9093dd63b4ccb6d9bff299a8333ff9c85\spring-boot-starter-2.4.0-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-actuator-autoconfigure\2.4.0-SNAPSHOT\a5108454d4515309a3bd2b7973092027c766e0c6\spring-boot-actuator-autoconfigure-2.4.0-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.micrometer\micrometer-core\1.6.1\56ef19504900ec907bafe2edb0512cd5c0ee19ec\micrometer-core-1.6.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-tomcat\2.4.0-SNAPSHOT\66cf623e840ee6991892fc196e27080810777ac9\spring-boot-starter-tomcat-2.4.0-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework\spring-webmvc\5.3.1\17493978f251b7e51393cdf19f4f51af9c1f04f2\spring-webmvc-5.3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.github.openfeign.form\feign-form-spring\3.8.0\71059f6e16ddbaf0e42f1b1aa0bb60cc2f823e4d\feign-form-spring-3.8.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework\spring-web\5.3.1\4e1e1d1c6b5a00597162db84132414c409bcf615\spring-web-5.3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-test-autoconfigure\2.4.0-SNAPSHOT\696b0f12dd32fb8088485009c40b729ed4206e5\spring-boot-test-autoconfigure-2.4.0-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-test\2.4.0-SNAPSHOT\db99e9e0eef388927907957cff94ad8c6cd0d378\spring-boot-test-2.4.0-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\com.jayway.jsonpath\json-path\2.4.0\765a4401ceb2dc8d40553c2075eb80a8fa35c2ae\json-path-2.4.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\jakarta.xml.bind\jakarta.xml.bind-api\2.3.3\48e3b9cfc10752fba3521d6511f4165bea951801\jakarta.xml.bind-api-2.3.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.testcontainers\testcontainers\1.14.3\71fc82ba663f469447a19434e7db90f3a872753\testcontainers-1.14.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\junit\junit\4.13.1\cdd00374f1fee76b11e2a9d127405aa3f6be5b6a\junit-4.13.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\2.2\3f2bd07716a31c395e2837254f37f21f0f0ab24b\hamcrest-core-2.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest\2.2\1820c0968dba3a11a1b30669bb1f01978a91dedc\hamcrest-2.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.junit.jupiter\junit-jupiter-params\5.7.0\521dbecace93d5d7ef13a74aab231befd7954424\junit-jupiter-params-5.7.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.junit.jupiter\junit-jupiter-api\5.7.0\b25f3815c4c1860a73041e733a14a0379d00c4d5\junit-jupiter-api-5.7.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.junit.platform\junit-platform-commons\1.7.0\84e309fbf21d857aac079a3c1fffd84284e1114d\junit-platform-commons-1.7.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.junit.jupiter\junit-jupiter\5.7.0\3152d152da916ccbb0715f89f7f873f45362ad7f\junit-jupiter-5.7.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.mockito\mockito-junit-jupiter\3.6.0\c06e9d5514c82f27707693a4195182415874f0d4\mockito-junit-jupiter-3.6.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.mockito\mockito-core\3.6.0\48657987075fea2e2176634ae35aaa5e93c929ef\mockito-core-3.6.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.skyscreamer\jsonassert\1.5.0\6c9d5fe2f59da598d9aefc1cfc6528ff3cf32df3\jsonassert-1.5.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework\spring-test\5.3.1\ebf8958b28f675897640d1b425a1dbb0bd7c80dd\spring-test-5.3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-autoconfigure\2.4.0-SNAPSHOT\49b9e22baef9b6f0f42ca949ec7dd61b536c1ca1\spring-boot-autoconfigure-2.4.0-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-actuator\2.4.0-SNAPSHOT\60be4e1bbbc7b05d159a3e33e354b6b1d4f1cf1\spring-boot-actuator-2.4.0-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot\2.4.0-SNAPSHOT\93ec72ac8054da44a51da240d5cc21d24895f840\spring-boot-2.4.0-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.springfox\springfox-oas\3.0.0\e7bc9c1319cf1b64ae714a249c3db3b8fe01e42b\springfox-oas-3.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.springfox\springfox-data-rest\3.0.0\40f5e834d6696ae1d3212fa5a2d5e1ec406bedc0\springfox-data-rest-3.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.springfox\springfox-bean-validators\3.0.0\80c646fdebe5f2b2b337a5a686e540fee0b7304f\springfox-bean-validators-3.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.springfox\springfox-swagger2\3.0.0\7bcb18d496576eff76ef7bb72684e149cbb75c1d\springfox-swagger2-3.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.springfox\springfox-swagger-common\3.0.0\2e2fae840984cfcabfd50e1b4b1c23422135ba12\springfox-swagger-common-3.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.springfox\springfox-spring-webmvc\3.0.0\7ed22363fdfd651cd811c0b2391f16bddb91db8b\springfox-spring-webmvc-3.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.springfox\springfox-spring-web\3.0.0\a76f2fbe805bfd2798e20dc8f2cfbfad554d52da\springfox-spring-web-3.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.springfox\springfox-schema\3.0.0\32c5d6965617830ef6480fadb9030008945bcd9c\springfox-schema-3.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.springfox\springfox-spi\3.0.0\bae0b820d4b5a922063d34a42aaf4f763308b828\springfox-spi-3.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.springfox\springfox-core\3.0.0\7c3367ce577c8acd9bf64c74488c9269253516c9\springfox-core-3.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.springfox\springfox-spring-webflux\3.0.0\efccbcfe1d23f2ba520bd87cc156bf2b81f3568e\springfox-spring-webflux-3.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.plugin\spring-plugin-metadata\2.0.0.RELEASE\6fb3a1fc0f05dc826687b7686ad8a5960ecdd57c\spring-plugin-metadata-2.0.0.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.plugin\spring-plugin-core\2.0.0.RELEASE\95fc8c13037630f4aba9c51141f535becec00fe6\spring-plugin-core-2.0.0.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework\spring-context\5.3.1\736836c8098981ddabd309a0c15f967594da62bc\spring-context-5.3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework\spring-aop\5.3.1\25c310880484082ffba3130deb8e10c5afb29f10\spring-aop-5.3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework\spring-beans\5.3.1\a4bb5ffad5564e4a0e25955e3a40b1c6158385b2\spring-beans-5.3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework\spring-expression\5.3.1\aee660842a21fbf49f6e5921aa07974f1650c498\spring-expression-5.3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework\spring-core\5.3.1\47af5b161749cd249fc074b4f140e011a3337efd\spring-core-5.3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.xmlunit\xmlunit-core\2.7.0\4d014eac96329c70175116b185749765cee0aad5\xmlunit-core-2.7.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.javamoney.moneta\moneta-convert-imf\1.3\44f5314faee63b05363bf884491491f109a8cbdd\moneta-convert-imf-1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.javamoney.moneta\moneta-convert-ecb\1.3\4a29ee6b41e1cba74870d8f767b881ebf9140db2\moneta-convert-ecb-1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.javamoney.moneta\moneta-convert\1.3\96dfd490f04d004eca37cc5197db17895dbe3ba1\moneta-convert-1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.javamoney.moneta\moneta-core\1.3\8732a94cc8b6758856e7b448e4e3eb105bc6a20a\moneta-core-1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\javax.money\money-api\1.1\a3bf7008b3a5b1c229ef24030f5004835ae57bea\money-api-1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\javax.annotation\javax.annotation-api\1.3.2\934c04d3cfef185a8008e7bf34331b79730a9d43\javax.annotation-api-1.3.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.cloud\spring-cloud-commons\3.0.0-M4\237a7a2b095b0ba6481cc3ca09ef310e62945983\spring-cloud-commons-3.0.0-M4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.github.openfeign\feign-slf4j\10.10.1\b735be19a39157c5742ca8d62b6f3202e683d1d7\feign-slf4j-10.10.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.github.openfeign\feign-core\10.10.1\d09c5d478b1cd83e95035539687b9ff4905dc99c\feign-core-10.10.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.springfox\springfox-swagger-ui\3.0.0\1e665fbe22148f7c36fa8a08e515a0047cd4390b\springfox-swagger-ui-3.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\com.fasterxml\classmate\1.5.1\3fe0bed568c62df5e89f4f174c101eab25345b6c\classmate-1.5.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.swagger\swagger-models\1.5.20\fb3a23bad80c5ed84db9dd150db2cba699531458\swagger-models-1.5.20.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.rnorth\tcp-unix-socket-proxy\1.0.2\cf53989130986c60113032e25185f4496ffbc186\tcp-unix-socket-proxy-1.0.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-logging\2.4.0-SNAPSHOT\d02eb33e02c91cdc85206f469b8459df5266b11a\spring-boot-starter-logging-2.4.0-SNAPSHOT.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-classic\1.2.3\7c4f3c474fb2c041d8028740440937705ebb473a\logback-classic-1.2.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-to-slf4j\2.13.3\966f6fd1af4959d6b12bfa880121d4a2b164f857\log4j-to-slf4j-2.13.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.slf4j\jul-to-slf4j\1.7.30\d58bebff8cbf70ff52b59208586095f467656c30\jul-to-slf4j-1.7.30.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.github.openfeign.form\feign-form\3.8.0\3083889996b18443c275a352d3ab4bc6c8321598\feign-form-3.8.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.30\b5a4b6d16ab13e34a88fae84c35cd5d68cac922c\slf4j-api-1.7.30.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.projectreactor.netty\reactor-netty-http\1.0.1\1842c244c1d34d17a2b5a96e116af3448753189e\reactor-netty-http-1.0.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.projectreactor.netty\reactor-netty-core\1.0.1\d3b6861cd9cd8b1e3387f14d80eb9c6724fd052b\reactor-netty-core-1.0.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\jakarta.annotation\jakarta.annotation-api\1.3.5\59eb84ee0d616332ff44aba065f3888cf002cd2d\jakarta.annotation-api-1.3.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.yaml\snakeyaml\1.27\359d62567480b07a679dc643f82fc926b100eed5\snakeyaml-1.27.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.hdrhistogram\HdrHistogram\2.1.12\6eb7552156e0d517ae80cc2247be1427c8d90452\HdrHistogram-2.1.12.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.datatype\jackson-datatype-jdk8\2.11.3\dcdfce3e4af9da18d69b1be6f3d7c91256105831\jackson-datatype-jdk8-2.11.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.datatype\jackson-datatype-jsr310\2.11.3\dd53d93fd448b345eeb75bec336d9c91dc56b796\jackson-datatype-jsr310-2.11.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.module\jackson-module-parameter-names\2.11.3\ab66d5c5b8008161ae89be8a3d98efff9ef1b915\jackson-module-parameter-names-2.11.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.11.3\4f7b27416934dc929bb6c2d2c5fe521829e6a4ec\jackson-databind-2.11.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-websocket\9.0.39\7b9607722206ba3045331159a29deb1ffc0f2cdf\tomcat-embed-websocket-9.0.39.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-core\9.0.39\d82e926b31f06e96fccf552e41f1b8b1615d96dc\tomcat-embed-core-9.0.39.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.glassfish\jakarta.el\3.0.3\dab46ee1ee23f7197c13d7c40fce14817c9017df\jakarta.el-3.0.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\net.minidev\json-smart\2.3\7396407491352ce4fa30de92efb158adb76b5b\json-smart-2.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\jakarta.activation\jakarta.activation-api\1.2.2\99f53adba383cb1bf7c3862844488574b559621f\jakarta.activation-api-1.2.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy\1.10.18\20240291b4f14ffe986e45468b1f1a3c15edc37c\byte-buddy-1.10.18.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.10.18\1070e69ef571b326d91819b57bd06fd7efc60819\byte-buddy-agent-1.10.18.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.objenesis\objenesis\3.1\48f12deaae83a8dfc3775d830c9fd60ea59bbbca\objenesis-3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\com.vaadin.external.google\android-json\0.0.20131108.vaadin1\fa26d351fe62a6a17f5cda1287c1c6110dec413f\android-json-0.0.20131108.vaadin1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework\spring-jcl\5.3.1\1158888aa7517f8997eb43afe47776d9d2de8a38\spring-jcl-5.3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.cloud\spring-cloud-context\3.0.0-M4\296edf65e65cfd93ad98aa5d11a602a56d913b42\spring-cloud-context-3.0.0-M4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.security\spring-security-rsa\1.0.9.RELEASE\7a506772756fe7669fa9538e7f195f832fab8559\spring-security-rsa-1.0.9.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.springframework.security\spring-security-crypto\5.4.1\bd9ef66acf62f342945b098441578b3838d1f8d7\spring-security-crypto-5.4.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.swagger.core.v3\swagger-annotations\2.1.2\d407a33aa71444802c640080eb4d5f499b027f96\swagger-annotations-2.1.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.swagger.core.v3\swagger-models\2.1.2\e7edeed6456a16d707542c003af03a594ecafe3a\swagger-models-2.1.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.swagger\swagger-annotations\1.5.20\16051f93ce11ca489a5313775d825f82fcc2cd6c\swagger-annotations-1.5.20.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\19.0.0\efbff6752f67a7c9de3e4251c086a88e23591dfd\annotations-19.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-compress\1.20\b8df472b31e1f17c232d2ad78ceb1c84e00c641b\commons-compress-1.20.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.rnorth.duct-tape\duct-tape\1.0.8\92edc22a9ab2f3e17c9bf700aaee377d50e8b530\duct-tape-1.0.8.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.rnorth.visible-assertions\visible-assertions\2.1.2\20d31a578030ec8e941888537267d3123c2ad1c1\visible-assertions-2.1.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna-platform\5.5.0\af38e7c4d0fc73c23ecd785443705bfdee5b90bf\jna-platform-5.5.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.apiguardian\apiguardian-api\1.1.0\fc9dff4bb36d627bdc553de77e1f17efd790876c\apiguardian-api-1.1.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.opentest4j\opentest4j\1.2.0\28c11eb91f9b6d8e200631d46e20a7f407f2a046\opentest4j-1.2.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.netty\netty-resolver-dns\4.1.54.Final\7d7a3cf2a9ed327c713cf593c7ba4bf9d9bfb072\netty-resolver-dns-4.1.54.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.netty\netty-handler-proxy\4.1.54.Final\8fa9d18b09a8a79bf64e8bc1bd775cbd77277199\netty-handler-proxy-4.1.54.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-http2\4.1.54.Final\327a4ae62b0a41cdf02f610f06eb353f10c17ef8\netty-codec-http2-4.1.54.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-http\4.1.54.Final\70eb9509289d1cee549cf12bae71929d1a4a12c7\netty-codec-http-4.1.54.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.netty\netty-handler\4.1.54.Final\e83dfe8ebe3622d2cd5cce8532a9ca49cad51e9\netty-handler-4.1.54.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.54.Final\e351768ffd4f5210698bbd534511fc8fc89c6b\netty-transport-native-epoll-4.1.54.Final-linux-x86_64.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.projectreactor\reactor-core\3.4.0\683c9c676c438e5945b0f12808575f22160c5e54\reactor-core-3.4.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.11.3\25d4e9c777e7a8805c4a000a8629d3009c779c9b\jackson-annotations-2.11.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.11.3\c2351800432bdbdd8284c3f5a7f0782a352aa84a\jackson-core-2.11.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\net.minidev\accessors-smart\1.2\c592b500269bfde36096641b01238a8350f8aa31\accessors-smart-1.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.bouncycastle\bcpkix-jdk15on\1.64\3dac163e20110817d850d17e0444852a6d7d0bd7\bcpkix-jdk15on-1.64.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjweaver\1.9.6\ee3b73aa16df35179255f17354d9dfd8e7822835\aspectjweaver-1.9.6.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\commons-fileupload\commons-fileupload\1.4\f95188e3d372e20e7328706c37ef366e5d7859b0\commons-fileupload-1.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.github.classgraph\classgraph\4.8.83\7be289f451cedf9e35ed97caba3953226b4e6d9\classgraph-4.8.83.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\com.kohlschutter.junixsocket\junixsocket-native-common\2.0.4\726bd66a934dea39c817382986496fa4eda96411\junixsocket-native-common-2.0.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\com.kohlschutter.junixsocket\junixsocket-common\2.0.4\b4d1870bf903412533e0b79c6fcd402defcfc05b\junixsocket-common-2.0.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna\5.5.0\e0845217c4907822403912ad6828d8e0b256208\jna-5.5.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-socks\4.1.54.Final\8f8239e989e80cd470eaea90ee5746dbf24f5b8e\netty-codec-socks-4.1.54.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec-dns\4.1.54.Final\886c9875a8360f5b3495960ec8be9af3632431f9\netty-codec-dns-4.1.54.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec\4.1.54.Final\295680345b12a86c21fa7af5d9a77e0e0fcff46a\netty-codec-4.1.54.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-unix-common\4.1.54.Final\ac7d48202cf62c8d51abe89f228d338a41cb49cd\netty-transport-native-unix-common-4.1.54.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport\4.1.54.Final\ddb9a255819b87b8812932d1d1001f4d9dc7f89e\netty-transport-4.1.54.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.netty\netty-resolver\4.1.54.Final\7eed781e7531b990f8360e1a5010b53ca73878f5\netty-resolver-4.1.54.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.netty\netty-buffer\4.1.54.Final\15c513ef8a2e56e88d3736752ea10eae758f47d8\netty-buffer-4.1.54.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\io.netty\netty-common\4.1.54.Final\8c330383cda87204ab38e7401ab0f56c0d43b799\netty-common-4.1.54.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.reactivestreams\reactive-streams\1.0.3\d9fb7a7926ffa635b3dcaa5049fb2bfa25b3e7d0\reactive-streams-1.0.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-core\1.2.3\864344400c3d4d92dfeb0a305dc87d953677c03c\logback-core-1.2.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.13.3\ec1508160b93d274b1add34419b897bae84c6ca9\log4j-api-2.13.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm\5.0.4\da08b8cce7bbf903602a25a3a163ae252435795\asm-5.0.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.bouncycastle\bcprov-jdk15on\1.64\1467dac1b787b5ad2a18201c0c281df69882259e\bcprov-jdk15on-1.64.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.2\83b5b8a7ba1c08f9e8c8ff2373724e33d3c1e22a\commons-io-2.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Ludo\.gradle\caches\modules-2\files-2.1\org.scijava\native-lib-loader\2.0.2\1451fa03954c5e31a358b411147de472b4dab92c\native-lib-loader-2.0.2.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\Ludo\Documents\Eclipse\workspace\TourGuide\TourGuide-GPS\src\test\resources</SrcDir>
+    <SrcDir>C:\Users\Ludo\Documents\Eclipse\workspace\TourGuide\TourGuide-GPS\src\test\java</SrcDir>
+  </Project>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 30 Dec 2020 20:54:50 +0100" total_classes="5" referenced_classes="74" total_bugs="0" total_size="265" num_packages="4" java_version="14.0.2" vm_version="14.0.2+12-46" cpu_seconds="7.16" clock_seconds="1.87" peak_mbytes="485.83" alloc_mbytes="512.00" gc_seconds="0.06">
+    <FileStats path="com/tourGuide/gps/GpsApplicationTests.java" bugCount="0" size="5"/>
+    <FileStats path="com/tourGuide/gps/controllers/GpsControllerIT.java" bugCount="0" size="49"/>
+    <FileStats path="com/tourGuide/gps/services/GpsServiceTest.java" bugCount="0" size="164"/>
+    <FileStats path="com/tourGuide/gps/util/DistanceCalculatorTest.java" bugCount="0" size="14"/>
+    <FileStats path="com/tourGuide/gps/util/EntityToDtoConverterTest.java" bugCount="0" size="33"/>
+    <PackageStats package="com.tourGuide.gps" total_bugs="0" total_types="1" total_size="5">
+      <ClassStats class="com.tourGuide.gps.GpsApplicationTests" sourceFile="GpsApplicationTests.java" interface="false" size="5" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.tourGuide.gps.controllers" total_bugs="0" total_types="1" total_size="49">
+      <ClassStats class="com.tourGuide.gps.controllers.GpsControllerIT" sourceFile="GpsControllerIT.java" interface="false" size="49" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.tourGuide.gps.services" total_bugs="0" total_types="1" total_size="164">
+      <ClassStats class="com.tourGuide.gps.services.GpsServiceTest" sourceFile="GpsServiceTest.java" interface="false" size="164" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.tourGuide.gps.util" total_bugs="0" total_types="2" total_size="47">
+      <ClassStats class="com.tourGuide.gps.util.DistanceCalculatorTest" sourceFile="DistanceCalculatorTest.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="com.tourGuide.gps.util.EntityToDtoConverterTest" sourceFile="EntityToDtoConverterTest.java" interface="false" size="33" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="475" invocations="766" avgMicrosecondsPerInvocation="620" maxMicrosecondsPerInvocation="16097" standardDeviationMicrosecondsPerInvocation="1383"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="325" invocations="772" avgMicrosecondsPerInvocation="421" maxMicrosecondsPerInvocation="7091" standardDeviationMicrosecondsPerInvocation="335"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.impl.ZipCodeBaseFactory" totalMilliseconds="68" invocations="145" avgMicrosecondsPerInvocation="473" maxMicrosecondsPerInvocation="6156" standardDeviationMicrosecondsPerInvocation="713"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="47" invocations="74" avgMicrosecondsPerInvocation="637" maxMicrosecondsPerInvocation="6643" standardDeviationMicrosecondsPerInvocation="1215"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="42" invocations="732" avgMicrosecondsPerInvocation="58" maxMicrosecondsPerInvocation="1114" standardDeviationMicrosecondsPerInvocation="112"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="37" invocations="74" avgMicrosecondsPerInvocation="508" maxMicrosecondsPerInvocation="5041" standardDeviationMicrosecondsPerInvocation="801"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="31" invocations="21" avgMicrosecondsPerInvocation="1506" maxMicrosecondsPerInvocation="15713" standardDeviationMicrosecondsPerInvocation="3494"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

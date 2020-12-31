@@ -14,6 +14,13 @@ For deploiement, please refer to users microservice readme: https://github.com/l
 
 ---
 
+## To run microservice:
+
+- **With your IDE**: refer to **application.properties** to set valid proxies url
+
+- **With Docker**: the jar hosted on GitHub is for a Docker deployment ("localhost" changed with the image Docker)
+
+
 ## For Docker deploiement:
 
 1. Install Docker Desktop: <br/>
@@ -23,6 +30,7 @@ https://docs.docker.com/docker-for-windows/ or https://docs.docker.com/docker-fo
 - `docker build -t tourguide-gps .`
 - `docker run -d -p 9002:9002 tourguide-gps`
 
-3. (**Optional** - For a Docker-Compose deploiement) <br/>
-If you want to deploy all TourGuide microservices, use the **docker-compose.yml** on the package root, running:
+3. To run all microservices on the same network, with a Docker-Compose deploiement: <br/>
+If you want to deploy all TourGuide microservices, use the **docker-compose.yml** on the package root, after each Dockerfile deployment for the 4 microservices, running:
+- `docker network create tourguide-net`
 - `docker-compose up -d`
