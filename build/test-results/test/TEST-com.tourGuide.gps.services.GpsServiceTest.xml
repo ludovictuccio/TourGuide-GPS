@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tourGuide.gps.services.GpsServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-12-30T19:54:49" hostname="PC-LUDO-2020" time="0.121">
+  <properties/>
+  <testcase name="Get All Attractions - OK" classname="com.tourGuide.gps.services.GpsServiceTest" time="0.081"/>
+  <testcase name="Get Closest Attractions - OK - 0 attraction" classname="com.tourGuide.gps.services.GpsServiceTest" time="0.006"/>
+  <testcase name="Get User Instant Location - OK" classname="com.tourGuide.gps.services.GpsServiceTest" time="0.014"/>
+  <testcase name="Get Closest Attractions - Ok" classname="com.tourGuide.gps.services.GpsServiceTest" time="0.015"/>
+  <system-out><![CDATA[2020-12-30 20:54:47.374  INFO 42140 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.tourGuide.gps.services.GpsServiceTest], using SpringBootContextLoader
+2020-12-30 20:54:47.376  INFO 42140 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.tourGuide.gps.services.GpsServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-12-30 20:54:47.376  INFO 42140 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.tourGuide.gps.services.GpsServiceTest]: GpsServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-12-30 20:54:47.383  INFO 42140 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.tourGuide.gps.GpsApplication for test class com.tourGuide.gps.services.GpsServiceTest
+2020-12-30 20:54:47.385  INFO 42140 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-12-30 20:54:47.387  INFO 42140 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3866124f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@38a441a8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@794df4b6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@24feaaa1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2c82301b, org.springframework.test.context.event.EventPublishingTestExecutionListener@36318d22, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@204f3716, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@71353a1c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4c8acec9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@76e802e7, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2f467cab, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@77fb4685]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::       (v2.4.0-SNAPSHOT)
+
+2020-12-30 20:54:47.460  INFO 42140 --- [    Test worker] c.tourGuide.gps.services.GpsServiceTest  : Starting GpsServiceTest using Java 14.0.2 on PC-LUDO-2020 with PID 42140 (started by Ludo in C:\Users\Ludo\Documents\Eclipse\workspace\TourGuide\TourGuide-GPS)
+2020-12-30 20:54:47.460 DEBUG 42140 --- [    Test worker] c.tourGuide.gps.services.GpsServiceTest  : Running with Spring Boot v2.4.0-SNAPSHOT, Spring v5.3.1
+2020-12-30 20:54:47.461  INFO 42140 --- [    Test worker] c.tourGuide.gps.services.GpsServiceTest  : The following profiles are active: dev
+2020-12-30 20:54:47.876  INFO 42140 --- [    Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d9e8ddfc-80ab-35e3-af97-8eaf4687ae88
+2020-12-30 20:54:48.482  INFO 42140 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-30 20:54:48.736  INFO 42140 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-30 20:54:49.134  INFO 42140 --- [    Test worker] c.tourGuide.gps.services.GpsServiceTest  : Started GpsServiceTest in 1.744 seconds (JVM running for 16.885)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

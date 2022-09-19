@@ -1,0 +1,10 @@
+com/tourGuide/gps/util/EntityToDtoConverterTest.java
+ com.tourGuide.gps.util.EntityToDtoConverterTest
+com/tourGuide/gps/GpsApplicationTests.java
+ com.tourGuide.gps.GpsApplicationTests
+com/tourGuide/gps/util/DistanceCalculatorTest.java
+ com.tourGuide.gps.util.DistanceCalculatorTest
+com/tourGuide/gps/controllers/GpsControllerIT.java
+ com.tourGuide.gps.controllers.GpsControllerIT
+com/tourGuide/gps/services/GpsServiceTest.java
+ com.tourGuide.gps.services.GpsServiceTest

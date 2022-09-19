@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GpsService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gps</a> &gt; <a href="index.source.html" class="el_package">com.tourGuide.gps.services</a> &gt; <span class="el_source">GpsService.java</span></div><h1>GpsService.java</h1><pre class="source lang-java linenums">package com.tourGuide.gps.services;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tourGuide.gps.domain.ClosestAttraction;
+import com.tourGuide.gps.domain.Location;
+import com.tourGuide.gps.domain.dto.AttractionDto;
+import com.tourGuide.gps.domain.dto.UserDto;
+import com.tourGuide.gps.domain.dto.VisitedLocationDto;
+import com.tourGuide.gps.proxies.MicroserviceRewardsProxy;
+import com.tourGuide.gps.proxies.MicroserviceUserProxy;
+import com.tourGuide.gps.util.DistanceCalculator;
+import com.tourGuide.gps.util.EntityToDtoConverter;
+
+import gpsUtil.GpsUtil;
+import gpsUtil.location.Attraction;
+
+@Service
+<span class="fc" id="L24">public class GpsService implements IGpsService {</span>
+
+    @Autowired
+    private GpsUtil gpsUtil;
+
+    @Autowired
+    private MicroserviceRewardsProxy microserviceRewardsProxy;
+
+    @Autowired
+    private MicroserviceUserProxy microserviceUserProxy;
+
+    @Autowired
+    private DistanceCalculator distanceCalculator;
+
+    @Autowired
+    private EntityToDtoConverter entityToDtoConversion;
+
+    /**
+     * {@inheritDoc}
+     */
+    public List&lt;AttractionDto&gt; getAllAttractions() {
+
+<span class="fc" id="L46">        List&lt;AttractionDto&gt; allAttractionsDto = new ArrayList&lt;&gt;();</span>
+
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        for (Attraction attraction : gpsUtil.getAttractions()) {</span>
+<span class="fc" id="L49">            AttractionDto attractionDto = entityToDtoConversion</span>
+<span class="fc" id="L50">                    .convertAttractionToDto(attraction);</span>
+<span class="fc" id="L51">            allAttractionsDto.add(attractionDto);</span>
+<span class="fc" id="L52">        }</span>
+<span class="fc" id="L53">        return allAttractionsDto;</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public List&lt;ClosestAttraction&gt; getClosestAttractions(
+            final String userName) {
+
+<span class="fc" id="L62">        UserDto userDto = microserviceUserProxy.getUserDto(userName);</span>
+<span class="fc" id="L63">        Location location = userDto.getLastLocation();</span>
+
+<span class="fc" id="L65">        List&lt;AttractionDto&gt; attractionsList = getAllAttractions();</span>
+<span class="fc" id="L66">        List&lt;ClosestAttraction&gt; theFiveClosestAttractions = new ArrayList&lt;&gt;();</span>
+
+<span class="fc bfc" id="L68" title="All 2 branches covered.">        if (attractionsList.isEmpty()) {</span>
+<span class="fc" id="L69">            return theFiveClosestAttractions;</span>
+        }
+
+<span class="fc" id="L72">        attractionsList.stream()</span>
+<span class="fc" id="L73">                .sorted((attraction1, attraction2) -&gt; Double.compare(</span>
+<span class="fc" id="L74">                        distanceCalculator.getDistanceInMiles(location,</span>
+<span class="fc" id="L75">                                attraction1.getLocation()),</span>
+<span class="fc" id="L76">                        distanceCalculator.getDistanceInMiles(location,</span>
+<span class="fc" id="L77">                                attraction2.getLocation())))</span>
+<span class="fc" id="L78">                .limit(5).forEach(attraction -&gt; {</span>
+
+<span class="fc" id="L80">                    int attractionRewardsPoints = microserviceRewardsProxy</span>
+<span class="fc" id="L81">                            .getAttractionRewards(attraction.getAttractionId(),</span>
+<span class="fc" id="L82">                                    userDto.getUserId());</span>
+
+<span class="fc" id="L84">                    ClosestAttraction closestAttraction = new ClosestAttraction(</span>
+<span class="fc" id="L85">                            attraction.getAttractionName(),</span>
+<span class="fc" id="L86">                            attraction.getLocation(), location,</span>
+<span class="fc" id="L87">                            distanceCalculator.getDistanceInMiles(</span>
+<span class="fc" id="L88">                                    attraction.getLocation(), location),</span>
+                            attractionRewardsPoints);
+
+<span class="fc" id="L91">                    theFiveClosestAttractions.add(closestAttraction);</span>
+<span class="fc" id="L92">                });</span>
+<span class="fc" id="L93">        return theFiveClosestAttractions;</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public VisitedLocationDto getUserInstantLocation(final UUID userId) {
+<span class="fc" id="L100">        return entityToDtoConversion</span>
+<span class="fc" id="L101">                .convertVisitedLocationToDto(gpsUtil.getUserLocation(userId));</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

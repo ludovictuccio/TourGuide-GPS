@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EntityToDtoConverter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gps</a> &gt; <a href="index.source.html" class="el_package">com.tourGuide.gps.util</a> &gt; <span class="el_source">EntityToDtoConverter.java</span></div><h1>EntityToDtoConverter.java</h1><pre class="source lang-java linenums">package com.tourGuide.gps.util;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.tourGuide.gps.domain.dto.AttractionDto;
+import com.tourGuide.gps.domain.dto.VisitedLocationDto;
+
+import gpsUtil.location.Attraction;
+import gpsUtil.location.VisitedLocation;
+
+@Component
+<span class="fc" id="L14">public class EntityToDtoConverter {</span>
+
+    @Autowired
+    private ModelMapper modelMapper;
+
+    /**
+     * Method used to convert Attraction entity to Attraction Dto.
+     *
+     * @param attraction
+     * @return AttractionDto attractionDto
+     */
+    public AttractionDto convertAttractionToDto(final Attraction attraction) {
+<span class="fc" id="L26">        AttractionDto attractionDto = modelMapper.map(attraction,</span>
+                AttractionDto.class);
+<span class="fc" id="L28">        attractionDto.setAttractionName(attraction.attractionName);</span>
+<span class="fc" id="L29">        attractionDto.setLocation(attraction.latitude, attraction.longitude);</span>
+<span class="fc" id="L30">        attractionDto.setCity(attraction.city);</span>
+<span class="fc" id="L31">        attractionDto.setState(attraction.state);</span>
+<span class="fc" id="L32">        attractionDto.setAttractionId(attraction.attractionId);</span>
+<span class="fc" id="L33">        return attractionDto;</span>
+    }
+
+    /**
+     * Method used to convert VisitedLocation entity to Dto.
+     *
+     * @param visitedLocation
+     * @return visitedLocationDto
+     */
+    public VisitedLocationDto convertVisitedLocationToDto(
+            final VisitedLocation visitedLocation) {
+<span class="fc" id="L44">        VisitedLocationDto visitedLocationDto = modelMapper.map(visitedLocation,</span>
+                VisitedLocationDto.class);
+<span class="fc" id="L46">        visitedLocationDto.setUserId(visitedLocation.userId);</span>
+<span class="fc" id="L47">        visitedLocationDto.setLatitude(visitedLocation.location.latitude);</span>
+<span class="fc" id="L48">        visitedLocationDto.setLongitude(visitedLocation.location.longitude);</span>
+<span class="fc" id="L49">        visitedLocationDto.setTimeVisited(visitedLocation.timeVisited);</span>
+<span class="fc" id="L50">        return visitedLocationDto;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

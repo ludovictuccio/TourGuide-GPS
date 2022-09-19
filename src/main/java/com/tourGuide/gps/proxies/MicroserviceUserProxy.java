@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.tourGuide.gps.domain.dto.UserDto;
 
-@FeignClient(value = "microservice-users", url = "localhost:9001/user")
+@FeignClient(value = "microservice-users", url = "${proxy.user}")
 public interface MicroserviceUserProxy {
 
     @GetMapping("/getUserDto/{userName}")
